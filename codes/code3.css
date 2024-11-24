@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: #030303;
+    padding: 2rem 1rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.d-flex {
+    display: flex;
+    gap: 24px;
+    margin: auto;
+    max-width: 80%;
+}
+
+.starships-show {
+    background-color: cornflowerblue;
+    padding: 20px;
+    margin: 50px;
+}
+
+#starships {
+    margin: 70px;
+}
+
+#persons {
+    margin: 20px auto;
+    max-width: 50%;
+    text-align: center;
+    /*columns: 2;*/
+}
+
+a {
+    text-decoration: none;
+    margin: 50px;
+}

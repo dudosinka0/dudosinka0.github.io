@@ -1,0 +1,50 @@
+.menu li:nth-child(3) {
+    background-color: rgb(97, 196, 176);
+}
+
+main .d-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px;
+    padding: 20px;
+    background-color: rgb(51, 51, 51);
+    align-items: center;
+}
+
+main .d-flex a img {
+    border: 10px solid rgb(97, 196, 176);
+    margin: 20px;
+    transition: 0.5s;
+}
+
+#img1:hover {
+    width: 530px;
+    height: 430px;
+    transition: 0.5s;
+}
+
+#img2:hover {
+    width: 530px;
+    height: 370px;
+    transition: 0.5s;
+}
+
+#img3:hover {
+    width: 540px;
+    height: 395px;
+    transition: 0.5s;
+}
+
+main .d-flex a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .d-flex span {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}

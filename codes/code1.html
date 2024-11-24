@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            margin: auto;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        button {
+            background-color: cornflowerblue;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            width: 50%;
+            transition: 0.5s;
+            font-size: 20px;
+            color: white;
+        }
+
+        button:hover {
+            transition: 0.5s;
+            background-color: rgb(72, 115, 197);
+        }
+
+        input {
+            width: 45%;
+            margin: 5px;
+            padding: 7px;
+            text-align: center;
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+
+    <div class="container">
+        <h1>Угадай число</h1>
+        <span id="try"></span>
+        <input type="text">
+        <button>проверить</button>
+        <span id="answer"></span>
+        <a href="javascript:history.back()">back</a>
+
+    </div>
+
+    <script>
+        let res = document.getElementById("answer");
+        let num = Math.floor(Math.random() * (10 - 1) + 1);
+        let btn = document.querySelector('button');
+        let ans = document.querySelector('input');
+        let tries = document.getElementById('try');
+        tries.textContent = "Есть 5 попыток";
+        let i = 5;
+
+        btn.addEventListener('click', function () {
+
+            if (ans.value == num) {
+                res.textContent = "you win";
+                btn.setAttribute('disabled', '');
+            }
+            else if (ans.value > num) {
+                res.textContent = "less!";
+                i--;
+            }
+            else if (ans.value < num) {
+                res.textContent = "more!";
+                i--;
+            }
+            tries.textContent = "Есть " + i + " попыток";
+            if (i == 0) {
+                res.textContent = "you lost";
+                btn.setAttribute('disabled', '');
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

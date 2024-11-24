@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=2, initial-scale=1.0">
+    <title>Document</title>>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+        }
+
+        .todo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            padding: 12px 15px;
+            width: 50%;
+        }
+
+        button {
+            background-color: blue;
+            padding: 10px 15px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s;
+            width: 50%;
+            margin: 10px;
+            color: white;
+        }
+
+        button:hover {
+            background-color: rgb(0, 0, 121);
+        }
+
+        ul {
+            list-style: none;
+            justify-self: center;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo">
+            <h1>Создать список дел</h1>
+            <a href="javascript:history.back()">back</a>
+            <input type="text" id="inputTask" placeholder="введите название нового дела">
+            <button>добавить</button>
+        </div>
+        <ul id="tasks"></ul>
+    </div>
+
+    <script>
+        let inputTask = document.querySelector('#inputTask');
+        let btnTask = document.querySelector('button');
+        let taskList = document.querySelector('#tasks');
+
+        btnTask.addEventListener('click', function () {
+
+            let task = inputTask.value;
+
+            if (task != "") {
+
+                let taskLi = document.createElement('li');
+
+                let labelTask = document.createElement('label');
+                labelTask.innerHTML = task + " ";
+                let delTask = document.createElement("span");
+                delTask.innerHTML = "&#10060;";
+                taskLi.append(labelTask);
+                taskLi.append(delTask);
+
+                taskList.prepend(taskLi);
+
+                inputTask.value = "";
+
+                delTask.onclick = function () {
+                    labelTask.style.textDecoration = 'line-through';
+                    delTask.remove();
+                }
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
